@@ -15,7 +15,7 @@
     (inherit emacs-exwm)
     (name "emacs-exwm-next")
     (arguments
-     `(#:emacs ,emacs-next-tree-sitter
+     `(#:emacs ,emacs
        #:phases
        (modify-phases %standard-phases
          (add-after 'build 'install-xsession

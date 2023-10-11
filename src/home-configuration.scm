@@ -19,7 +19,7 @@
              (gnu home services shells))
 
 (define my-rde-services
-  (home-environment-services
+  (home-environment-user-services
    (rde-config-home-environment
     (rde-config
      (features
@@ -88,10 +88,8 @@
  ;; services, run 'guix home search KEYWORD' in a terminal.
  (services
   (append
+   my-rde-services
    (list
-    (my-rde-services)
-    (service home-dbus-service-type)
-    (service home-pipewire-service-type)
     (service home-bash-service-type
              (home-bash-configuration
               (bashrc

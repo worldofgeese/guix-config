@@ -18,6 +18,12 @@
              (rde features linux)
              (gnu home services shells))
 
+(define my-rde-services
+  (home-environment-services
+   (rde-config-home-environment
+    (rde-config
+     (features
+      (list (feature-pipewire)))))))
 
 (home-environment
  ;; Below is the list of packages that will show up in your
@@ -83,6 +89,7 @@
  (services
   (append
    (list
+    (my-rde-services)
     (service home-dbus-service-type)
     (service home-pipewire-service-type)
     (service home-bash-service-type
